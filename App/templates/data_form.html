@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container card p-3 mt-5 border-dark" style="width: 95%;">
+    <h5 class="text-center">ADD CANDIDATE</h5>
+    <hr>
+
+    <form action="" method="POST" autocomplete="off">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-primary ms-2" type="reset">Reset</button>
+
+            <a href="{% url 'data_read' %}" class="btn btn-outline-dark ms-2">List All</a>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
